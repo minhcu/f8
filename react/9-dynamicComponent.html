@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const ButtonHandler = function({title, href, onClick}) {
+        let Component = 'button'
+        const props = {};
+        if(href) {
+            Component = 'a'
+            props.href = href
+        }
+        if(href) {
+            props.onClick = onClick
+        }
+        return <Component {...props}>{title}</Component>
+      }
+
+      const Form = {
+        Input() {return (<input />)}
+      }
+
+      const click = () => console.log('a')
+
+
+      const App = function() {
+        return (
+            <div id="app">
+                <Form.Input />
+                <br/>
+                <ButtonHandler
+                    title="Click me!"
+                    href="http://127.0.0.1:5500/react/9-dynamicComponent.html"
+                    onClick={() => click()}
+                />
+            </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

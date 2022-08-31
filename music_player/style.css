@@ -1,0 +1,255 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  height: 100vh;
+  background: #00f260; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0575e6,
+    #00f260
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h2 {
+  margin: 0;
+}
+
+span {
+  color: #8581b6;
+}
+
+.container {
+  width: 600px;
+  margin: auto;
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header,
+.player {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 10px 0;
+  color: hsl(338deg 88% 56%);
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 0 15px;
+}
+
+.icon-wrapper i,
+.option,
+.player__btn i {
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.icon-wrapper i::after,
+.option::after,
+.player__btn i::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(242, 44, 117, 0.231);
+}
+
+.icon-wrapper i:hover::after,
+.option:hover::after,
+.player__btn i:hover::after {
+  display: block;
+}
+
+.header__item {
+  text-align: center;
+}
+
+.header__item h2 {
+  color: black;
+}
+
+.header__item span {
+  color: hsl(338deg 88% 56%);
+}
+
+.body {
+  margin: 0 30px;
+  color: #8581b6;
+}
+
+.disc {
+  width: 200px;
+  display: flex;
+  margin: auto;
+  animation-name: spin ;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+.disc__img {
+  width: 100%;
+  padding-top: 100%;
+  margin: auto;
+  border-radius: 50%;
+  background-size: cover;
+  background-image: url("https://i1.sndcdn.com/artworks-8o6KweHyd8lHZU84-nb9b2g-t500x500.jpg");
+}
+
+.progress {
+  -webkit-appearance: none; /* Override default CSS styles */
+  opacity: 0.8;
+  width: 100%;
+  height: 10px;
+  margin: 10px 0;
+  background: #e9e6f5;
+  border-radius: 10px;
+}
+
+.progress:hover {
+  opacity: 1;
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 15px;
+  border: 1px solid #8581b6;
+  border-radius: 3px;
+  background: hsl(338deg 88% 56%);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.progress::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  color: hsl(338deg 88% 56%);
+}
+
+.player {
+  padding: 20px 0;
+}
+
+.player__btn {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player__btn .play__btn,
+.player__btn .stop__btn {
+  display: none;
+}
+
+.play__btn,
+.stop__btn {
+  color: hsl(338deg 88% 56%);
+  font-size: 60px;
+}
+
+.play__btn.active,
+.stop__btn.active {
+  display: block;
+}
+
+.player__btn i.active {
+    color: hsl(338deg 88% 56%);
+}
+
+.list {
+  position: relative;
+  background-color: #f3f2f7;
+  padding: 30px 10px;
+  max-height: 350px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.up-next {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #8581b6;
+  border-radius: 30px;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.list__item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 0 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.list__item.active {
+  background-color: hsl(338deg 88% 56%);
+}
+
+.list__item.active span,
+.list__item.active i {
+  color: white;
+}
+
+.list__item:active {
+    opacity: 0.7;
+}
+
+.img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-image: url("https://i1.sndcdn.com/artworks-8o6KweHyd8lHZU84-nb9b2g-t500x500.jpg");
+  background-size: cover;
+}
+
+.content {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.option {
+  font-size: 20px;
+  color: #8581b6;
+}

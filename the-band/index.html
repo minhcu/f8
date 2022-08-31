@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="modal" id="modalTickets">
+      <div class="modal__container">
+        <div class="modal__header">
+          <h2>
+            <i class="fa-solid fa-ticket"></i>
+            Tickets
+          </h2>
+          <div class="modal__close-btn" onclick="modalToggler()">
+            <i class="fa-solid fa-x"></i>
+          </div>
+        </div>
+        <div class="modal__body">
+          <p><i class="fa-solid fa-ticket"></i> Tickets, $15 per person</p>
+          <input
+            class="form__input"
+            type="text"
+            placeholder="How many?"
+            required
+          />
+          <p><i class="fa-solid fa-user"></i> Send To</p>
+          <input
+            class="form__input"
+            type="text"
+            placeholder="Send to"
+            required
+          />
+          <button class="modal__btn" onclick="modalToggler()">
+            Pay <i class="fa-solid fa-check"></i>
+          </button>
+          <button class="btn" onclick="modalToggler()">
+            Close <i class="fa-solid fa-x"></i>
+          </button>
+          <p>
+            Need
+            <a href="#">help?</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <ul class="nav">
+        <li><a href="#home"> Home </a></li>
+        <li><a href="#band"> Band </a></li>
+        <li><a href="#tour"> Tour </a></li>
+        <li><a href="#contact"> Contact </a></li>
+        <li>
+          <a href="#">
+            More
+            <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <ul class="dropdown">
+            <li><a href="#" class="dropdown__list__item">Merchandise</a></li>
+            <li><a href="#" class="dropdown__list__item">Extras</a></li>
+            <li><a href="#" class="dropdown__list__item">Media</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav__btn nav__search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="nav__btn nav__mobile" onclick="mobileMenuToggler()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="mobile-nav" id="mobileNav">
+        <li><a href="#band"> Band </a></li>
+        <li><a href="#tour"> Tour </a></li>
+        <li><a href="#contact"> Contact </a></li>
+        <li><a href="#"> Merch </a></li>
+      </ul>
+    </header>
+    <section class="section--full" id="home">
+      <div class="slider">
+        <div class="slider__item">
+          <img class="slider__item__bg" src="./img/ny.jpeg" alt="new york" />
+          <div class="slider__item__content">
+            <h3>New York</h3>
+            <p>The atmosphere in New York is lorem ipsum.</p>
+          </div>
+        </div>
+        <div class="slider__item">
+          <img class="slider__item__bg" src="./img/la.jpeg" alt="los angeles" />
+          <div class="slider__item__content">
+            <h3>Los Angeles</h3>
+            <p>We had the best time playing at Venice Beach!</p>
+            <p></p>
+          </div>
+        </div>
+        <div class="slider__item">
+          <img
+            class="slider__item__bg"
+            src="./img/chicago.jpeg"
+            alt="chicago"
+          />
+          <div class="slider__item__content">
+            <h3>Chicago</h3>
+            <p>Thank you, Chicago - A night we won't forget.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="band">
+      <div class="section">
+        <h2 class="section__title">The Band</h2>
+        <p class="section__sub-title">We love music</p>
+        <p class="section__content">
+          We have created a fictional band website. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+        <div class="section__row">
+          <div class="card">
+            <p class="card__title">Name</p>
+            <img class="card__image" src="./img/bandmember.jpeg" alt="" />
+          </div>
+          <div class="card">
+            <p class="card__title">Name</p>
+            <img class="card__image" src="./img/bandmember.jpeg" alt="" />
+          </div>
+          <div class="card">
+            <p class="card__title">Name</p>
+            <img class="card__image" src="./img/bandmember.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="tour">
+      <div class="section">
+        <h2 class="section__title">Tour Date</h2>
+        <p class="section__sub-title">Remember to book your tickets!</p>
+        <ul class="tour__schedule text--grey">
+          <li class="tour__schedule__item">
+            <span>September</span>
+            <span class="badge badge-danger">Sold out</span>
+          </li>
+          <li class="tour__schedule__item border-seperate">
+            <span>October</span>
+            <span class="badge badge-danger">Sold out</span>
+          </li>
+          <li class="tour__schedule__item">
+            <span>November</span>
+            <span class="badge badge-round">3</span>
+          </li>
+        </ul>
+        <div class="section__row">
+          <div class="card">
+            <img class="card__image" src="./img/newyork.jpeg" alt="New York" />
+            <div class="card__content">
+              <p class="card__title">New York</p>
+              <p class="card__sub-title">Fri 27 Nov 2016</p>
+              <p class="card__description">
+                Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+              </p>
+              <button class="btn" onclick="modalToggler()">Buy tickets</button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="./img/paris.jpeg" alt="Paris" />
+            <div class="card__content">
+              <p class="card__title">Paris</p>
+              <p class="card__sub-title">Sat 28 Nov 2016</p>
+              <p class="card__description">
+                Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+              </p>
+              <button class="btn" onclick="modalToggler()">Buy tickets</button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="./img/sanfran.jpeg"
+              alt="San Francisco"
+            />
+            <div class="card__content">
+              <p class="card__title">San Francisco</p>
+              <p class="card__sub-title">Sun 29 Nov 2016</p>
+              <p class="hero__description">
+                Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+              </p>
+              <button class="btn" onclick="modalToggler()">Buy tickets</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="contact">
+      <h2 class="section__title">Contact</h2>
+      <p class="section__sub-title">Fan? Drop a note!</p>
+      <div class="section__row">
+        <div class="contact__item">
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            Chicago, US
+          </div>
+          <div>
+            <i class="fa-solid fa-phone"></i>
+            Phone: +00 151515
+          </div>
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            Email: mail@mail.com
+          </div>
+        </div>
+        <div class="contact__item">
+          <form class="form" action="">
+            <div class="flex">
+              <input
+                class="form__input"
+                type="text"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="form__input"
+                type="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <input
+              class="form__input width-full"
+              type="text"
+              placeholder="Message"
+              required
+            />
+            <button class="btn" type="submit">SEND</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <img class="map" src="./img/map.jpeg" alt="" />
+    <footer class="footer">
+      <div class="footer__nav">
+        <a href="">
+          <i class="fa-brands fa-facebook-square"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-snapchat-square"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-pinterest-p"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </div>
+      <p class="copyright">
+        Powered by
+        <a href="https://www.w3schools.com/w3css/default.asp" target="__blank"
+          >w3.css</a
+        >
+      </p>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

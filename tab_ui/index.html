@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 500px;
+        margin: auto;
+      }
+      .wrapper {
+        position: relative;
+        display: flex;
+      }
+      .wrapper > div {
+        flex: 0 0 25%;
+        max-width: 25%;
+        opacity: 0.6;
+        font-size: 24px;
+        font-weight: 700;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+      }
+      .wrapper > div:not(:last-child):hover {
+        background-color: bisque;
+      }
+      .wrapper > .active {
+        opacity: 1;
+      }
+      .line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: green;
+        border-radius: 3px;
+        transition: all .2s ease;
+      }
+      .content > div {
+        display: none;
+      }
+      .content > .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="active">React</div>
+        <div>Angular</div>
+        <div>Ember</div>
+        <div>Design</div>
+        <div class="line"></div>
+      </div>
+      <div class="content">
+        <div class="active">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </div>
+        <div>
+          Earum iste corrupti quae inventore qui tempore dolores repudiandae,
+        </div>
+        <div>
+          accusamus temporibus et minus laborum exercitationem, deserunt
+          obcaecati maxime,
+        </div>
+        <div>quisquam voluptate eius necessitatibus?</div>
+      </div>
+    </div>
+    <script>
+      const tabs = document.querySelectorAll(".wrapper>div:not(:last-child)");
+      const tabsContent = document.querySelectorAll(".content>div");
+      const line = document.querySelector(".line");
+
+      tabs.forEach((tab, index) => {
+        const pane = tabsContent[index];
+        tab.onclick = function () {
+          document.querySelector(".wrapper>.active").classList.remove("active");
+          document.querySelector(".content>.active").classList.remove("active");
+          pane.classList.add("active");
+          this.classList.add("active");
+          line.style.left = 25*index + '%' //25% equal to 4 tab
+        };
+      });
+    </script>
+  </body>
+</html>

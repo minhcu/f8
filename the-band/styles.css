@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+@keyframes modal {
+  0% {
+    top: -400px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h2,h3 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+p {
+  margin: 15px 0;
+}
+
+button {
+  border: none;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+input {
+  font: inherit;
+}
+
+/* Others */
+.text--grey {
+  color: #757575;
+}
+
+.btn {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.btn:hover {
+  color: #000000;
+  background-color: #cccccc;
+}
+
+/* header */
+.header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+}
+
+.nav {
+  display: flex;
+}
+
+.mobile-nav {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  margin-top: 46px;
+  background-color: #000000;
+}
+
+.nav li a,
+.mobile-nav li a {
+  display: inline-block;
+  color: #ffffff;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav > li:hover > a,
+.dropdown > li:hover > a,
+.nav__mobile:hover,
+.modal__btn:hover, .modal .btn:hover  {
+  color: #000000;
+  background-color: #cccccc;
+}
+
+.nav li:hover .dropdown {
+  display: block;
+}
+
+.nav .dropdown {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+}
+
+.dropdown li a {
+  width: 100%;
+  color: #000000;
+  padding: 8px 16px;
+  text-transform: none;
+}
+
+.nav__btn {
+  cursor: pointer;
+  color: #ffffff;
+  padding: 12px 24px;
+  margin: 0;
+}
+
+.nav__mobile {
+  display: none;
+}
+
+.nav__search:hover {
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+/* section */
+.section {
+  max-width: 800px;
+  margin: auto;
+  padding: 64px 16px;
+}
+
+.section__title {
+  margin: 10px 0;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.section__sub-title {
+  opacity: .6;
+  text-align: center;
+  font-style: italic;
+}
+
+.section__content {
+  text-align: justify;
+}
+
+.section__row {
+  padding: 32px 0;
+  display: flex;
+  gap: 16px;
+}
+
+/* card */
+.card {
+  width: calc(100%/3);
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__content {
+  padding: 8px 16px;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.card__sub-title {
+  opacity: .6;
+}
+
+#band .card {
+  text-align: center;
+}
+
+#band .card__image {
+  width: 60%;
+}
+
+/* home */
+.slider {
+  width: 100%;
+}
+
+.slider__item {
+  position: relative;
+  width: 100%;
+}
+
+.slider__item:not(:first-child) {
+  display: none;
+}
+
+.slider__item__bg {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.slider__item__content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+/* tour */
+#tour {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.tour__schedule {
+  background-color: #ffffff;
+}
+
+.tour__schedule__item {
+  padding: 8px 16px;
+}
+
+.border-seperate {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.badge-danger {
+  margin-left: 16px;
+  color: #ffffff;
+  background-color: #f44336;
+}
+
+.badge-round {
+  float: right;
+  margin-right: 16px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+/* Contact */
+
+.contact__item {
+  width: 50%;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cccccc;
+}
+
+.form .flex {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.form button {
+  margin-top: 16px;
+  float: right;
+}
+/* map */
+.map {
+    width: 100%;
+    object-fit: contain;
+}
+
+/* footer */
+.footer {
+    padding: 64px 16px;
+    color: #666666;
+    text-align: center;
+}
+
+.footer__nav {
+    font-size: 24px;
+}
+
+.footer__nav a:hover {
+    opacity: .6;
+}
+
+.copyright a {
+    text-decoration: underline;
+}
+
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  padding-top: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%);
+}
+
+.modal__container {
+  animation: modal .4s;
+  position: relative;
+  width: 900px;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.modal__header {
+  position: relative;
+  padding: 32px 16px;
+  color: #ffffff;
+  background-color: #009688;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.modal__body {
+  padding: 0px 16px;
+}
+
+.modal__btn {
+  width: 100%;
+  margin: 16px 0;
+  padding: 16px;
+  color: #ffffff;
+  background-color: #009688;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.modal .btn {
+  color: #ffffff;
+  background-color: #f44336;
+}
+
+.modal__body p:last-child {
+  float: right;
+  margin: 0;
+}
+
+.modal__body p:last-child a {
+  color: #2196F3;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 960px) {
+  .modal__container {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section__row {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+  .contact__item {
+    width: 100%;
+    text-align: center;
+  }
+  .nav li:not(:first-child) {
+    display: none;
+  }
+  .nav__search {
+    display: none;
+  }
+  .nav__mobile {
+    display: block;
+  }
+  .modal__container {
+    width: auto;
+    margin: 10px;
+  }
+}
